@@ -24,6 +24,7 @@ client.on("messageCreate", message => {
                     message.channel.send("Veuillez réessayer s'il vous plaît.");
                 }
             })
+            return
         message.channel.send("Channel vocal créé !");
 }})
 
