@@ -6,7 +6,14 @@ client.on('ready', function () {
 })
 // -------------------------------- //
 
-
+//Ping pong
+client.on("messageCreate", message => {
+    if (message.content === "!Regles") {
+        message.channel.send(
+            "Ceci est le réglement du serveur"
+            )
+    }
+})
 
 // -------------------------------- //
 client.login('OTYwODQ1NTIyMTc0ODg1OTE4.YkwXIA.pKVuJldScngEyQxH0RFClZvfLnY')
