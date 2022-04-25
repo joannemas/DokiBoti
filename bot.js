@@ -1,5 +1,7 @@
 const Discord = require('discord.js')
+const config = require('./config.json')
 const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] })
+const prefix = '%'
 client.on('ready', function () {
     console.log("Bot lancé !")
 })
@@ -38,4 +40,4 @@ client.on("messageCreate", message => {
         message.channel.send("Channel vocal créé !");
 }})
 
-client.login('%');
+client.login(config.token);
