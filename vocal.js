@@ -8,13 +8,16 @@ client.on('ready', function () {
 })
 // -------------------------------- //
 
-let nameOfChannel = "";
-let limitUser= 0;
-let waitingForLimitUser = false;
+let vocalCommand = false;
 
 //Création d'un channel vocal
 client.on("messageCreate", message => {
-    if (message.content === "vocal") {
+    if (message.content === "vocal" && !vocalCommand) {
+        vocalCommand = true;
+        let nameOfChannel = "";
+        let limitUser= 0;
+        let waitingForLimitUser = false;
+        let channelCreated = false;
         const filter = (m) => m.author.id === message.author.id;
         message.channel.send("Comment souhaitez-vous appelez le salon ?")
         const collector = new Discord.MessageCollector(message.channel, {
@@ -42,7 +45,13 @@ client.on("messageCreate", message => {
             message.guild.channels.create(nameOfChannel, options);
             waitingForLimitUser = false;
             message.channel.send(`Le channel ${nameOfChannel} à été crée avec succès !`);
+            channelCreated = true;
             collector.stop()
+        })
+        collector.on('end', collected => {
+            vocalCommand = false;
+            if (channelCreated) return;
+            message.channel.send("La commande de création de salon a été annulé, channel supprimé !")
         })
     }
 })
