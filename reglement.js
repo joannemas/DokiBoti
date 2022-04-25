@@ -6,7 +6,7 @@ client.on('ready', function () {
 })
 // -------------------------------- //
 
-//Ping pong
+//Affichage des règles
 client.on("messageCreate", message => {
     if (message.content === "!Regles") {
         message.channel.send(
