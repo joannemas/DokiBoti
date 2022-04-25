@@ -9,13 +9,21 @@ client.on('ready', function () {
 //Création d'un channel vocal
 client.on("messageCreate", message => {
     if (message.content === "vocal") {
-        message.guild.channels.create("channel vocal", { 
-            type: "GUILD_VOICE",
-            permissionOverwrites: [{
-                id: message.guild.id,
-                allow: ['VIEW_CHANNEL'],
-            }]
-        });
+        message.channel.send("Comment souhaitez-vous appelez le salon ?")
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id, { time: 1000 });
+            collector.on('collect', message => {
+                if (message.content === message.content ) {
+                    message.guild.channels.create(message.content, { 
+                        type: "GUILD_VOICE",
+                        permissionOverwrites: [{
+                        id: message.guild.id,
+                        allow: ['VIEW_CHANNEL'],
+                        }]
+                    });
+                } else if (message.content === "") {
+                    message.channel.send("Veuillez réessayer s'il vous plaît.");
+                }
+            })
         message.channel.send("Channel vocal créé !");
 }})
 
