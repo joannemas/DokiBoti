@@ -163,10 +163,10 @@ client.on("messageCreate", message => {
             .setThumbnail(`${LogoBot}`)
             .setColor("#FFFFFF")
             .addFields(
-                { name: '1⃣ Restez poli et courtois', value: '➥ Vous pouvez être familier, on ne vous demande pas d’écrire comme Molière, on n\'est pas à L\'Élysée non plus. \n ──────────────────────────────────────' },
+                { name: '1⃣ Restez poli et courtois', value: '➥ Merci d\'avoir un comportement correct avec vos camarades. \n ──────────────────────────────────────' },
                 { name: '2⃣ Pas de violence verbale', value: '➥ Vous pouvez taquiner gentiment sans aller dans l’extrême. Si cela reste dans la bonne humeur et le second degré. \n ──────────────────────────────────────' },
-                { name: '3⃣ Changer vos pseudos Discord', value: '➥ Changer vos pseudos par vos vrai noms afin d’être reconnaissable. \n ──────────────────────────────────────' },
-                { name: '4⃣ Attention au spam', value: '➥ Ne tagguez pas le staff, l\'équipe pédagogique ou tout le monde uniquement si c\'est nécessaire ! N\'abusez pas du tag "everyone" pour éviter de déranger tout le Discord. \n ──────────────────────────────────────' },
+                { name: '3⃣ Changer vos pseudos Discord', value: '➥ Merci de changer votre pseudo sur le serveur par votre nom et prénom. \n ──────────────────────────────────────' },
+                { name: '4⃣ Attention au spam', value: '➥ Essayez de limiter vos mentions d\'utilisateurs. Merci de ne pas utiliser le tag "@everyone" qui dérangera tout le serveur. \n ──────────────────────────────────────' },
                 { name: '5⃣ Soyez respectueux', value: '➥ Tous propos discriminatoires, homophobes, racistes, antisémites, injurieux, pornographiques seront sanctionnés ! \n ──────────────────────────────────────' },
             )
             .setFooter({
