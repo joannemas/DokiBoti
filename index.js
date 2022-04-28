@@ -155,11 +155,11 @@ client.on("messageCreate", message => {
 
 // Embed des regles du serveur //
 client.on("messageCreate", message => {
-    let LogoBot = "https://t3.ftcdn.net/jpg/03/26/91/28/360_F_326912810_xcSR5libiZoBSbgtBuZmlQVDmO26lwrZ.jpg";
+    let LogoBot = "https://live.staticflickr.com/4129/4837849029_5bf163a3dc_b.jpg";
     if (message.content === "%regles") {
         const exampleEmbed = new MessageEmbed()
             .setTitle("Règlement du serveur")
-            .setDescription("Respectez les règles ci-dessous sous peine de vous faire ban. \n ──────────────────────────────────────")
+            .setDescription("Respectez les règles OU sinon ban ! \n ──────────────────────────────────────")
             .setThumbnail(`${LogoBot}`)
             .setColor("#FFFFFF")
             .addFields(
