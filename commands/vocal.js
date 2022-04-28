@@ -8,7 +8,7 @@ client.on('ready', function () {
 })
 // -------------------------------- //
 
-//Création d'un channel vocal
+//Création d'un channel vocal //
 let vocalCommand = false;
 client.on("messageCreate", message => {
     if (message.content === "vocal" && !vocalCommand) {

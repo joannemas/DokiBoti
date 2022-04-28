@@ -9,7 +9,7 @@ client.on('ready', function () {
 // -------------------------------- //
 
 
-//Création d'un channel textuel
+//Création d'un channel textuel //
 let texteCommand = false;
 client.on("messageCreate", message => {
     if (message.content === "channel" && !texteCommand) {

@@ -11,6 +11,7 @@ client.on('ready', function () {
 })
 // -------------------------------- //
 
+// Embed des regles du serveur //
 client.on("messageCreate", message => {
     let LogoBot = "http://pa1.narvii.com/6596/d9493dc295a4d548ba713e013d15ce3a90244446_00.gif";
     if (message.content === "%regles") {
