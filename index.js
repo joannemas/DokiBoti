@@ -4,7 +4,7 @@ const config = require('./config.json')
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms')
 const fs = require('fs');
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] })
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] ,  partials: ["MESSAGE", "CHANNEL", "REACTION" ]})
 const prefix = '%'
 
 client.commands = new Discord.Collection();
