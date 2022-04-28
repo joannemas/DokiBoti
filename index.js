@@ -23,11 +23,38 @@ client.on('message', message => {
         client.commands.get('roleRemove').execute(message, args, Discord, client);
         client.commands.get('quotes').execute(message, args, Discord, client);
         client.commands.get('timer').execute(message, ms, args, Discord, client);
+        client.commands.get('answer').execute(message, client, Discord, args);
+        client.commands.get('start').execute(message, client, Discord, args);
 });
 
 client.on('ready', function () {
     console.log("Bot lancé !")
 })
+
+// When someone sends "%rendu" it tags the person in another server and counts how many people sent it
+// When %stoprendu is sent, counter restarts from 0
+let numberSend=0;
+client.on('message', message => {
+    if (message.content === "%rendu") {
+        const user = message.author;
+        numberSend=numberSend+1;
+        if (numberSend === 1){
+            accord = " rendu."
+        }else{
+            accord = " rendus."
+        }
+        client.channels.cache.find(channel => channel.name === "rendu").send(`<@${user.id}> a envoyer son rendu. \n`+numberSend.toString()+ accord);
+    }
+});
+
+client.on('message', message => {
+    if (message.content === "%stoprendu") {
+        numberSend=0;
+        client.channels.cache.find(channel => channel.name === "rendu").send('Le délai de rendu est terminé.');
+    }
+});
+
+
 
 // Welcome message
 client.on('guildMemberAdd', member => {
