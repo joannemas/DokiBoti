@@ -2,8 +2,8 @@ module.exports = {
     name: 'timer',
     description: "Starts a timer and tag everyone when finished",
 
-    execute(message){
-        const ms = require('ms')
+    execute(message, ms){
+
         // Split the content of message to get each arg
         const args = message.content.split(/ +/g);
         const command = args.shift().toLowerCase();
@@ -12,7 +12,7 @@ module.exports = {
             let timer = args[0];
             
 
-            if(!args[0]){
+            if(!args[0] || !parseFloat(args[0])){
                 return message.channel.send("Usage : %timer + durée+s|m|h")
             }
     

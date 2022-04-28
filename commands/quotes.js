@@ -22,7 +22,7 @@ module.exports = {
         const messageContent = message.content.toLowerCase().normalize('NFD');
         const needInspire = inspireWord.some( (element) => messageContent.indexOf(element) !== -1);
         
-        if (message.content === "%inspire" || needInspire) {
+        if (message.content === "%inspiration" || needInspire) {
             getQuote().then(quote => message.channel.send(quote))
         }
     }
