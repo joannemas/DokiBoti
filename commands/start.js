@@ -9,7 +9,6 @@ module.exports = {
             message.guild.channels.create("rendu");
             message.guild.channels.create("bienvenue");
             message.guild.channels.create("règles");
-
              }
     }
 };
