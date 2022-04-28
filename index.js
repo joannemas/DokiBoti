@@ -155,7 +155,7 @@ client.on("messageCreate", message => {
 
 // Embed des regles du serveur //
 client.on("messageCreate", message => {
-    let LogoBot = "https://live.staticflickr.com/4129/4837849029_5bf163a3dc_b.jpg";
+    let LogoBot = "https://t3.ftcdn.net/jpg/03/26/91/28/360_F_326912810_xcSR5libiZoBSbgtBuZmlQVDmO26lwrZ.jpg";
     if (message.content === "%regles") {
         const exampleEmbed = new MessageEmbed()
             .setTitle("Règlement du serveur")
