@@ -10,8 +10,6 @@ module.exports = {
             message.guild.channels.create("bienvenue");
             message.guild.channels.create("règles");
 
-            channelCreated = true;
-            client.channels.cache.find(channel => channel.name === "rendu").send("Vous verrez qui a envoyer son rendu et combien de personnes au total vous l'ont envoyer");
-        }
+             }
     }
 };
