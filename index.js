@@ -153,6 +153,32 @@ client.on("messageCreate", message => {
     }
 })
 
+// Embed des regles du serveur //
+client.on("messageCreate", message => {
+    let LogoBot = "https://live.staticflickr.com/4129/4837849029_5bf163a3dc_b.jpg";
+    if (message.content === "%regles") {
+        const exampleEmbed = new MessageEmbed()
+            .setTitle("Règlement du serveur")
+            .setDescription("Respectez les règles ci-dessous sous peine de vous faire ban. \n ──────────────────────────────────────")
+            .setThumbnail(`${LogoBot}`)
+            .setColor("#FFFFFF")
+            .addFields(
+                { name: '1⃣ Restez poli et courtois', value: '➥ Vous pouvez être familier, on ne vous demande pas d’écrire comme Molière, on n\'est pas à L\'Élysée non plus. \n ──────────────────────────────────────' },
+                { name: '2⃣ Pas de violence verbale', value: '➥ Vous pouvez taquiner gentiment sans aller dans l’extrême. Si cela reste dans la bonne humeur et le second degré. \n ──────────────────────────────────────' },
+                { name: '3⃣ Changer vos pseudos Discord', value: '➥ Changer vos pseudos par vos vrai noms afin d’être reconnaissable. \n ──────────────────────────────────────' },
+                { name: '4⃣ Attention au spam', value: '➥ Ne tagguez pas le staff, l\'équipe pédagogique ou tout le monde uniquement si c\'est nécessaire ! N\'abusez pas du tag "everyone" pour éviter de déranger tout le Discord. \n ──────────────────────────────────────' },
+                { name: '5⃣ Soyez respectueux', value: '➥ Tous propos discriminatoires, homophobes, racistes, antisémites, injurieux, pornographiques seront sanctionnés ! \n ──────────────────────────────────────' },
+            )
+            .setFooter({
+                text: 'Équipe en charge de l\'administration du serveur',
+                iconURL: `${LogoBot}`
+            })
+            .setTimestamp()
+        message.channel.send({
+            embeds: [exampleEmbed]
+        });
+    }
+})
 
 
 
