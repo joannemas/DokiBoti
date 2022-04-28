@@ -12,7 +12,6 @@ module.exports = {
 
             channelCreated = true;
             client.channels.cache.find(channel => channel.name === "rendu").send("Vous verrez qui a envoyer son rendu et combien de personnes au total vous l'ont envoyer");
-            client.channels.cache.find(channel => channel.name === "règles").send("Règles");
         }
     }
 };
