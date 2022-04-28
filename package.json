@@ -1,0 +1,19 @@
+{
+  "name": "dokiboti",
+  "version": "1.0.0",
+  "description": "Discord bot for Devlab",
+  "main": "index.js",
+  "scripts": {
+    "test": "%start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joannemas/DokiBoti.git"
+  },
+  "author": "Joanne MASSILLON, Enas EL MERSHATI, Rayan IDRI, Thibaut FRANCOIS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joannemas/DokiBoti/issues"
+  },
+  "homepage": "https://github.com/joannemas/DokiBoti#readme"
+}
