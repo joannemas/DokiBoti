@@ -180,6 +180,20 @@ client.on("messageCreate", message => {
     }
 })
 
+// Reactions for some messages
+client.on('message', message => {
+    if (message.content === 'Bonjour') {
+        message.react('👋');
+    }
+    else if (message.content === 'Bonsoir') {
+        message.react('🌙');
+    }
+    else if (message.content === 'merci') {
+        message.react('😊');
+    }
+}); 
+
+
 
 
 client.login(config.token);
