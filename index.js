@@ -4,7 +4,7 @@ const config = require('./config.json')
 const { MessageEmbed } = require('discord.js');
 const ms = require('ms')
 const fs = require('fs');
-const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES"] ,  partials: ["MESSAGE", "CHANNEL", "REACTION" ]})
+const client = new Discord.Client({ intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_MEMBERS"] ,  partials: ["MESSAGE", "CHANNEL", "REACTION" ]})
 const prefix = '%'
 
 client.commands = new Discord.Collection();
@@ -56,13 +56,13 @@ client.on('message', message => {
 
 
 
-// Welcome message
-client.on('guildMemberAdd', member => {
-    member.guild.channels.cache.find(channel => channel.name === "bienvenue")
-        .then(channel => {
-            channel.send("Bienvenue sur le serveur, "+member.user.toString()); 
-        })
-});
+// // Welcome message
+// client.on('guildMemberAdd', member => {
+//     member.guild.channels.cache.find(channel => channel.name === "bienvenue")
+//         .then(channel => {
+//             channel.send("Bienvenue sur le serveur, "+member.user.toString()); 
+//         })
+// });
 
 // If we ping the bot, it answers us
 client.on("messageCreate", (message) => {
@@ -153,7 +153,7 @@ client.on("messageCreate", message => {
     }
 })
 
-// Embed des regles du serveur //
+// Embed of server rules
 client.on("messageCreate", message => {
     let LogoBot = "https://live.staticflickr.com/4129/4837849029_5bf163a3dc_b.jpg";
     if (message.content === "%regles") {
@@ -180,23 +180,24 @@ client.on("messageCreate", message => {
     }
 })
 
+// Embed of commands
 client.on("messageCreate", message => {
-    let LogoBot = "http://pa1.narvii.com/6596/d9493dc295a4d548ba713e013d15ce3a90244446_00.gif";
+    let LogoBot = "https://live.staticflickr.com/4129/4837849029_5bf163a3dc_b.jpg";
     if (message.content === "%commandes") {
         const exampleEmbed = new MessageEmbed()
             .setTitle("Liste des commandes du bot")
-            .setDescription("Voici les commandes pour utiliser les fonctionnalités du bot. \n ──────────────────────────────────────")
+            .setDescription("Voici les commandes pour utiliser les fonctionnalités du bot. \n ────────────")
             .setThumbnail(`${LogoBot}`)
             .setColor("#FFFFFF")
             .addFields(
-                { name: '%start', value: '➥ A lancé une fois lors de l\'installation du bot, créer les channels. \n ──────────────────────────────────────' },
-                { name: '%timer + durée+s|m|h', value: '➥ Lance un chronomètre et tag tout le monde à sa fin. \n ──────────────────────────────────────' },
-                { name: '%give + rôle + @nom', value: '➥ Ajouter un rôle à une personne. \n ──────────────────────────────────────' },
-                { name: '%remove+ rôle + @nom', value: '➥ Retir le rôle d\'une personne. \n ──────────────────────────────────────' },
-                { name: '%inspiration', value: '➥ Envoie des citations. \n ──────────────────────────────────────' },
-                { name: '%rendu', value: '➥ Dans le channel rendu, envoie qui et combien ont envoyé "%rendu". \n ──────────────────────────────────────' },
-                { name: '%stoprendu', value: '➥ Remet à 0 le compteur des rendu. \n ──────────────────────────────────────' },
-                { name: '%regles', value: '➥ Affiche la liste des règles du serveur. \n ──────────────────────────────────────' },
+                { name: '%start', value: '➥ A lancé une fois lors de l\'installation du bot, créer les channels. \n  ────────────' },
+                { name: '%timer + durée+s|m|h', value: '➥ Lance un chronomètre et tag tout le monde à sa fin. \n  ────────────' },
+                { name: '%give + rôle + @nom', value: '➥ Ajouter un rôle à une personne. \n  ────────────' },
+                { name: '%remove+ rôle + @nom', value: '➥ Retir le rôle d\'une personne. \n  ────────────' },
+                { name: '%inspiration', value: '➥ Envoie des citations. \n  ────────────' },
+                { name: '%rendu', value: '➥ Dans le channel rendu, envoie qui et combien ont envoyé "%rendu". \n  ────────────' },
+                { name: '%stoprendu', value: '➥ Remet à 0 le compteur des rendu. \n  ────────────' },
+                { name: '%regles', value: '➥ Affiche la liste des règles du serveur. \n  ────────────' },
                 )
             .setFooter({
                 text: 'Équipe en charge de l\'administration du serveur',
@@ -207,6 +208,12 @@ client.on("messageCreate", message => {
             embeds: [exampleEmbed]
         });
     }
+})
+
+// MP when someone join the server
+client.on('guildMemberAdd', (guildMember) => {
+    guildMember.send("Bienvenue sur le serveur ! Je suis DokiBoti, le bot qui t'accompagnera pendant ton travail. N'hésites pas à envoyer un %commandes sur le serveur où je me trouve pour découvrir toutes mes commandes. 🤖")
+    .catch(console.error)
 })
 
 // Reactions for some messages
