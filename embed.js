@@ -67,4 +67,4 @@ client.on("messageCreate", message => {
 })
 
 // -------------------------------- //
-client.login('OTYwODQ1NTIyMTc0ODg1OTE4.YkwXIA.pKVuJldScngEyQxH0RFClZvfLnY')
+client.login('TOKEN')
