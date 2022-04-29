@@ -6,7 +6,7 @@ module.exports = {
     execute(message){
 
         // These words trigger the command
-        const abuse = ['pede', 'connard', 'pute', 'tchoin', 'nique', 'fdp', 'idiot'];
+        const abuse = ['pede', 'connard', 'pute', 'tchoin', 'nique', 'fdp', 'idiot', 'pd', 'merde', 'putain', 'tg', 'ta gueule', 'nsm', 'connasse', 'nik', 't nul'];
     
         // Get content of the message to check it
         const messageContent = message.content.toLowerCase().normalize('NFD');

@@ -55,15 +55,6 @@ client.on('message', message => {
 });
 
 
-
-// // Welcome message
-// client.on('guildMemberAdd', member => {
-//     member.guild.channels.cache.find(channel => channel.name === "bienvenue")
-//         .then(channel => {
-//             channel.send("Bienvenue sur le serveur, "+member.user.toString()); 
-//         })
-// });
-
 // If we ping the bot, it answers us
 client.on("messageCreate", (message) => {
     if (message.author.bot) return false;
@@ -79,7 +70,7 @@ client.on("messageCreate", (message) => {
 // Creating a text channel
 let texteCommand = false;
 client.on("messageCreate", message => {
-    if (message.content === "channel" && !texteCommand) {
+    if (message.content === "%channel" && !texteCommand) {
         texteCommand = true;
         message.channel.send("Comment souhaitez-vous appeler le channel ?")
         channelCreated = false;
@@ -109,7 +100,7 @@ client.on("messageCreate", message => {
 // Creating a voice channel
 let vocalCommand = false;
 client.on("messageCreate", message => {
-    if (message.content === "vocal" && !vocalCommand) {
+    if (message.content === "%vocal" && !vocalCommand) {
         vocalCommand = true;
         let nameOfChannel = "";
         let limitUser= 0;
@@ -190,10 +181,12 @@ client.on("messageCreate", message => {
             .setThumbnail(`${LogoBot}`)
             .setColor("#FFFFFF")
             .addFields(
-                { name: '%start', value: '➥ A lancé une fois lors de l\'installation du bot, créer les channels. \n  ────────────' },
-                { name: '%timer + durée+s|m|h', value: '➥ Lance un chronomètre et tag tout le monde à sa fin. \n  ────────────' },
+                { name: '%start', value: '➥ À lancer une fois lors de l\'installation du bot, créé les channels. \n  ────────────' },
+                { name: '%timer + durée+ s|m|h', value: '➥ Lance un chronomètre et tag tout le monde à sa fin. \n  ────────────' },
                 { name: '%give + rôle + @nom', value: '➥ Ajouter un rôle à une personne. \n  ────────────' },
                 { name: '%remove+ rôle + @nom', value: '➥ Retir le rôle d\'une personne. \n  ────────────' },
+                { name: '%channel', value: '➥ Créer un channel textuel. \n  ────────────' },
+                { name: '%vocal', value: '➥ Créer un channel vocal. \n  ────────────' },
                 { name: '%inspiration', value: '➥ Envoie des citations. \n  ────────────' },
                 { name: '%rendu', value: '➥ Dans le channel rendu, envoie qui et combien ont envoyé "%rendu". \n  ────────────' },
                 { name: '%stoprendu', value: '➥ Remet à 0 le compteur des rendu. \n  ────────────' },
