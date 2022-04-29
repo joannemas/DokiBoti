@@ -63,19 +63,25 @@ You should have something like this
 
 ![image](https://user-images.githubusercontent.com/90480267/166003869-ed6956ac-4042-497f-8f2f-401c2dd21e8e.png)
 
-6. Click on add bot and select the Administrator permission
+6. Click on "Add bot"
 
-![image](https://user-images.githubusercontent.com/90480267/166004596-f34212df-a769-4153-a6f4-504697779771.png)
+![image](https://user-images.githubusercontent.com/90480267/166060795-f6b7b7b8-0394-4152-94da-ad17f3994590.png)
 
-![image](https://user-images.githubusercontent.com/90480267/166005055-313cf16e-970f-43b3-8c48-8c2da955a1c3.png)
+7. Check "PRESENCE INTENT" and "SERVER MEMBERS INTENT"
 
-7. Click on reset token, copy the token and paste it in the "config.json" file
+![image](https://user-images.githubusercontent.com/90480267/166060268-ce7fb52f-dcb4-4d68-ab6a-be2a0e174d4e.png)
+
+
+8. Click on reset token, copy the token and paste it in the "config.json" file where it is written "your token"
+
 ![image](https://user-images.githubusercontent.com/90480267/166005392-c88fd38b-b646-4298-b931-a3a4462d3211.png)
 
-8. Add your bot to a server
+9. Select the "Bot" scope and "Administrator" permission then copy the url generated to add the bot to a server
+
+![image](https://user-images.githubusercontent.com/90480267/166060436-1f1c9260-64ba-4663-a572-1345c7bb8819.png)
 
 
-9. Back to your file, start your bot and you'r ready !
+10. Back to your file, start your bot and you're ready !
 
     node index.js
 
